@@ -15,13 +15,15 @@ header{padding:2.25rem 0 1rem;border-bottom:1px solid color-mix(in srgb,var(--te
 h1{font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.15;margin:0 0 .75rem}
 .lede{font-size:1.08rem;margin:0 0 1rem;opacity:.95}
 .warn{margin:1rem 0;padding:1rem 1.05rem;border-radius:12px;border:1px solid var(--warn-br);background:var(--warn-bg)}
-section{margin-top:2.1rem}h2{font-size:1.22rem;margin:0 0 .65rem;color:color-mix(in srgb,var(--text) 88%,var(--accent))}
+section{margin-top:2.1rem}h2{font-size:1.22rem;margin:0 0 .65rem;color:color-mix(in srgb,var(--text) 88%,var(--accent))}h3{font-size:1.05rem;margin:1.1rem 0 .45rem;font-weight:650;color:color-mix(in srgb,var(--text) 82%,var(--accent))}
 p{margin:.6rem 0 .9rem}ul{margin:.4rem 0 1rem;padding-left:1.2rem}li{margin:.35rem 0}
 .muted{color:var(--muted);font-size:.95rem}
-.chart-wrap{width:100%;height:clamp(560px,72vh,780px);min-height:560px;margin:1rem 0;border-radius:14px;overflow:hidden;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);background:color-mix(in srgb,var(--card) 92%,transparent)}
-.tradingview-widget-container{height:100%;width:100%}
-.tradingview-widget-container__widget{height:calc(100% - 28px);width:100%}
-.tradingview-widget-copyright{font-size:11px;line-height:28px;text-align:center;color:var(--muted)}
+.chart-wrap{width:100%;height:min(72vh,720px);min-height:520px;margin:1rem 0;border-radius:14px;overflow:hidden;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);background:color-mix(in srgb,var(--card) 92%,transparent)}
+.tradingview-widget-container{height:100%;width:100%;min-height:480px}
+.tradingview-widget-container__widget{height:calc(100% - 32px);width:100%;min-height:440px}
+.portfolio{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0 0}
+.portfolio span{display:inline-block;padding:.35rem .75rem;border-radius:999px;font-size:.92rem;font-variant-numeric:tabular-nums;background:color-mix(in srgb,var(--accent) 16%,transparent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.tradingview-widget-copyright{font-size:11px;line-height:32px;text-align:center;color:var(--muted)}
 .tradingview-widget-copyright a{color:var(--muted);text-decoration:none}
 a{color:var(--accent)}a:hover{text-decoration:none}
 footer{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid color-mix(in srgb,var(--text) 12%,transparent);font-size:.9rem}
@@ -57,11 +59,48 @@ footer{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid color-mix(in s
 <p><strong>BIST 100</strong>, Borsa İstanbul’da işlem gören paylardan oluşan endekslerden biridir; bileşen ve ağırlıklar dönemsel güncellenir. Kesin tanımlar için borsanın resmi duyurularına bakın.</p>
 <p class="muted">Aşağıdaki grafik üçüncü taraf bir veri sağlayıcısıdır; fiyatlar gecikmeli veya yaklaşık olabilir. İşlem kararı için tek kaynak kullanmayın.</p>
 <div class="chart-wrap" aria-label="BIST 100 fiyat grafiği">
-<div class="tradingview-widget-container" id="tv-bist100-box">
+<div class="tradingview-widget-container">
 <div class="tradingview-widget-container__widget"></div>
 <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BIST-XU100/" rel="noopener nofollow noreferrer" target="_blank"><span>BIST 100 — TradingView</span></a></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+{
+  "autosize": true,
+  "symbol": "BIST:XU100",
+  "interval": "D",
+  "timezone": "Europe/Istanbul",
+  "theme": "dark",
+  "style": "1",
+  "locale": "tr",
+  "enable_publishing": false,
+  "allow_symbol_change": false,
+  "calendar": false,
+  "hide_volume": false,
+  "support_host": "https://www.tradingview.com"
+}
+</script>
 </div>
 </div>
+<p class="muted">Grafik teması koyu renktedir; sistem temanız açık olsa bile okunabilirlik için sabitlenmiştir.</p>
+</section>
+<section>
+<h2>Yapay zeka ve finans</h2>
+<p><strong>Yapay zeka (YZ)</strong> finans dünyasında giderek daha çok; veri hacmi büyüdükçe insanın tek başına süzdüğü sinyallerin yerine <em>özetleme, sınıflandırma, anomali tespiti</em> ve <em>senaryo üretimi</em> gibi yardımcı roller üstleniyor. Aşağıdaki başlıklar bilgilendirme amaçlıdır; ürün veya strateji önerisi içermez.</p>
+<ul>
+<li><strong>Araştırma ve raporlama:</strong> Şirket sunumları, finansal tablolar ve haber akışı gibi metinleri hızlı taramak, tutarlılık kontrolleri ve taslak rapor üretmek için YZ araçları kullanılabilir; nihai metin için uzman gözden geçirmesi gerekir.</li>
+<li><strong>Risk ve uyumluluk (RegTech):</strong> İşlem kalıplarında şüpheli davranışların işaretlenmesi, politika metinlerinin karşılaştırılması ve denetim izi özetleri gibi alanlarda yardımcı olur; karar yine kurallar ve insan süreçlerine bağlıdır.</li>
+<li><strong>Portföy ve fiyatlama modelleri:</strong> Geçmiş getirilere dayalı istatistiksel modeller veya “faktör” yaklaşımları uzun süredir kullanılıyor; derin öğrenme ekleri ise veri ve <strong>model riski</strong> (aşırı uyum, dağılım kayması) yönetimi olmadan anlamlı değildir.</li>
+<li><strong>Alım-satım ve yürütme:</strong> Düşük gecikmeli piyasalarda otomasyon yıllardır var; YZ burada çoğunlukla <em>öngörü</em> yerine <em>veri işleme ve karar desteği</em> katmanında konumlanır. Piyasa mikroyapısı ve düzenleyici kısıtlar dikkate alınmalıdır.</li>
+<li><strong>Etik ve şeffaflık:</strong> Müşteri verisi, açıklanabilirlik (özellikle kurumsal raporlama) ve üçüncü taraf API’lerine güven zinciri kritik konulardır.</li>
+</ul>
+</section>
+<section>
+<h2>Model portföy</h2>
+<p class="muted">Örnek bileşen listesi; <strong>yatırım tavsiyesi değildir</strong>. Payların işlem gördüğü piyasa, kod adları ve şirket unvanları zamanla değişebilir.</p>
+<div class="portfolio" aria-label="Örnek pay kodları">
+<span>BIST:TRGYO</span>
+<span>BIST:RGYAS</span>
+</div>
+<p>İlgili şirket ve enstrüman bilgileri için <a href="https://www.borsaistanbul.com" rel="noopener noreferrer">Borsa İstanbul</a> ve aracı kurum yayımlarına başvurun.</p>
 </section>
 <section>
 <h2>Kaynaklar</h2>
@@ -69,38 +108,29 @@ footer{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid color-mix(in s
 <li><a href="https://www.borsaistanbul.com/endeksler" rel="noopener noreferrer">Borsa İstanbul — Endeksler</a></li>
 <li><a href="https://www.spk.gov.tr" rel="noopener noreferrer">SPK — Sermaye Piyasası Kurulu</a></li>
 </ul>
-<p class="muted">Bağlantılar bilgilendirme amaçlıdır.</p>
+<h3>Akademik: Google Scholar aramaları</h3>
+<p class="muted">Aşağıdaki sorgular <a href="https://scholar.google.com" rel="noopener noreferrer">Google Scholar</a> üzerinde makale ve atıf keşfi için kullanılabilir (içerikler üçüncü taraf yayıncılara aittir).</p>
+<ul>
+<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=machine+learning+empirical+asset+pricing" rel="noopener noreferrer">Scholar — makine öğrenmesi &amp; ampirik varlık fiyatlama</a></li>
+<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=deep+learning+option+pricing+finance" rel="noopener noreferrer">Scholar — derin öğrenme &amp; opsiyon fiyatlama / finans</a></li>
+<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=natural+language+processing+financial+disclosure+sentiment" rel="noopener noreferrer">Scholar — doğal dil işleme &amp; finansal açıklama / duygu analizi</a></li>
+<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=reinforcement+learning+portfolio+optimization" rel="noopener noreferrer">Scholar — pekiştirmeli öğrenme &amp; portföy optimizasyonu</a></li>
+</ul>
+<h3>Akademik: Yazar profilleri (YZ &amp; finans)</h3>
+<p class="muted">Önde gelen araştırmacıların <strong>Google Scholar</strong> profilleri; yayın listeleri ve atıflar için başlangıç noktasıdır.</p>
+<ul>
+<li><a href="https://scholar.google.com/citations?user=0vqdffMAAAAJ&amp;hl=tr" rel="noopener noreferrer">Bryan Kelly — makine öğrenmesi &amp; varlık fiyatlama</a></li>
+<li><a href="https://scholar.google.com/citations?user=TaF4L4EAAAAJ&amp;hl=tr" rel="noopener noreferrer">Jianqing Fan — istatistik, makine öğrenmesi &amp; finans</a></li>
+<li><a href="https://scholar.google.com/citations?user=0-2fCGsAAAAJ&amp;hl=tr" rel="noopener noreferrer">Nick Polson — Bayes / derin öğrenme &amp; finans uygulamaları</a></li>
+<li><a href="https://scholar.google.com/citations?user=mtNQD-8AAAAJ&amp;hl=tr" rel="noopener noreferrer">Stefan Zohren — makine öğrenmesi &amp; zaman serileri (finans)</a></li>
+<li><a href="https://scholar.google.com/citations?user=1QrbVekAAAAJ&amp;hl=tr" rel="noopener noreferrer">Matthew F. Dixon — derin öğrenme &amp; hesaplamalı finans</a></li>
+</ul>
+<p class="muted">Bağlantılar bilgilendirme amaçlıdır; yatırım tavsiyesi değildir.</p>
 </section>
 </main>
 <footer>
 <p>Bilgilendirme amaçlı statik içerik. Kişisel veri toplanmaz.</p>
 </footer>
 </div>
-<script>
-(function () {
-  var box = document.getElementById("tv-bist100-box");
-  if (!box) return;
-  var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  var cfg = {
-    autosize: true,
-    symbol: "BIST:XU100",
-    interval: "D",
-    timezone: "Europe/Istanbul",
-    theme: dark ? "dark" : "light",
-    style: "1",
-    locale: "tr",
-    allow_symbol_change: false,
-    calendar: false,
-    hide_volume: false,
-    support_host: "https://www.tradingview.com"
-  };
-  var s = document.createElement("script");
-  s.type = "text/javascript";
-  s.async = true;
-  s.textContent = JSON.stringify(cfg);
-  s.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-  box.appendChild(s);
-})();
-</script>
 </body>
 </html>
