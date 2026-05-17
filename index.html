@@ -1,136 +1,507 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Yapay zeka ve yatırım: kısa özet, riskler, BIST 100 grafiği. Bilgilendirme; tavsiye değildir."/>
-<title>AI Yatırım Rehberi</title>
-<style>
-:root{color-scheme:light dark;--bg:#0c1017;--text:#e6ebf2;--muted:#94a3b8;--accent:#38bdf8;--accent2:#0ea5e9;--card:#111827;--warn-bg:#1c1917;--warn-br:#d97706;--max:46rem}
-@media (prefers-color-scheme:light){:root{--bg:#f8fafc;--text:#0f172a;--muted:#475569;--card:#fff;--warn-bg:#fffbeb}}
-*{box-sizing:border-box}body{margin:0;font:1.05rem/1.7 system-ui,sans-serif;background:var(--bg);color:var(--text)}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem 3rem}
-header{padding:2.25rem 0 1rem;border-bottom:1px solid color-mix(in srgb,var(--text) 14%,transparent)}
-.badge{color:var(--accent2);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .4rem}
-h1{font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.15;margin:0 0 .75rem}
-.lede{font-size:1.08rem;margin:0 0 1rem;opacity:.95}
-.warn{margin:1rem 0;padding:1rem 1.05rem;border-radius:12px;border:1px solid var(--warn-br);background:var(--warn-bg)}
-section{margin-top:2.1rem}h2{font-size:1.22rem;margin:0 0 .65rem;color:color-mix(in srgb,var(--text) 88%,var(--accent))}h3{font-size:1.05rem;margin:1.1rem 0 .45rem;font-weight:650;color:color-mix(in srgb,var(--text) 82%,var(--accent))}
-p{margin:.6rem 0 .9rem}ul{margin:.4rem 0 1rem;padding-left:1.2rem}li{margin:.35rem 0}
-.muted{color:var(--muted);font-size:.95rem}
-.chart-wrap{width:100%;height:min(72vh,720px);min-height:520px;margin:1rem 0;border-radius:14px;overflow:hidden;border:1px solid color-mix(in srgb,var(--text) 10%,transparent);background:color-mix(in srgb,var(--card) 92%,transparent)}
-.tradingview-widget-container{height:100%;width:100%;min-height:480px}
-.tradingview-widget-container__widget{height:calc(100% - 32px);width:100%;min-height:440px}
-.portfolio{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0 0}
-.portfolio span{display:inline-block;padding:.35rem .75rem;border-radius:999px;font-size:.92rem;font-variant-numeric:tabular-nums;background:color-mix(in srgb,var(--accent) 16%,transparent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
-.tradingview-widget-copyright{font-size:11px;line-height:32px;text-align:center;color:var(--muted)}
-.tradingview-widget-copyright a{color:var(--muted);text-decoration:none}
-a{color:var(--accent)}a:hover{text-decoration:none}
-footer{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid color-mix(in srgb,var(--text) 12%,transparent);font-size:.9rem}
-.skip{position:absolute;left:-999px}:focus{outline:2px solid var(--accent);outline-offset:2px}
-</style>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AINVEST — Yapay zeka yatırımları, AI startup’ları ve strateji çerçevesi</title>
+  <meta
+    name="description"
+    content="AI startup değerlendirme, AI fonları, model riski ve regülasyon çerçevesi. BIST 100 grafiği ve resmi kaynaklar. Bilgilendirme amaçlıdır; yatırım tavsiyesi değildir."
+  />
+  <link rel="canonical" href="https://ainvest.com.tr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:url" content="https://ainvest.com.tr/" />
+  <meta property="og:title" content="AINVEST — Yapay zeka yatırımları ve strateji çerçevesi" />
+  <meta
+    property="og:description"
+    content="AI yatırımları için düzenleyici odaklı bilgilendirme: startup çerçevesi, fonlar, model riski, BIST 100. Yatırım tavsiyesi değildir."
+  />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AINVEST — Yapay zeka yatırımları ve strateji çerçevesi" />
+  <meta
+    name="twitter:description"
+    content="AI yatırımları için bilgilendirme kaynağı. Resmi bağlantılar, akademik girişler ve BIST 100 grafiği. Yatırım tavsiyesi değildir."
+  />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "AINVEST",
+        "url": "https://ainvest.com.tr/",
+        "inLanguage": "tr-TR",
+        "description": "Yapay zeka yatırımları, AI startup çerçevesi ve model riski üzerine bilgilendirme içeriği. Yatırım tavsiyesi değildir."
+      },
+      {
+        "@type": "Organization",
+        "name": "AINVEST",
+        "url": "https://ainvest.com.tr/"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<a class="skip" href="#icerik">İçeriğe atla</a>
-<div class="wrap">
-<header>
-<p class="badge">ainvest.com.tr</p>
-<h1>Yapay zeka ve yatırım araştırması</h1>
-<p class="lede">Bu sayfa, <strong>yapay zekanın</strong> araştırma ve raporlama süreçlerindeki rolünü kısaca özetler; <abbr title="Borsa İstanbul">BIST</abbr> tarafında <strong>BIST 100</strong> endeksini canlı grafikle gösterir. Yatırım tavsiyesi değildir.</p>
-<div class="warn"><strong>Uyarı:</strong> Burada yatırım tavsiyesi yoktur. Kararlarınızı kendi riskinizle verin; gerektiğinde lisanslı danışmanlara ve düzenleyici kurumların yayımlarına başvurun.</div>
-</header>
-<main id="icerik">
-<section>
-<h2>Yapay zeka ve araştırma</h2>
-<p>Metin üretimi, veri tarama, senaryo ve stres testlerinde hesaplama desteği gibi alanlarda yapay zeka araçları kullanılabilir. Ortak riskler: veri kalitesi, model hataları ve <strong>insan denetimi</strong> ihtiyacı.</p>
-</section>
-<section>
-<h2>Riskler ve sınırlar</h2>
-<ul>
-<li><strong>Hallüsinasyon:</strong> Dil modelleri yanlış veya eksik bilgi üretebilir; kaynak doğrulaması şarttır.</li>
-<li><strong>Önyargı ve aşırı uyum:</strong> Geçmiş veri geleceği garanti etmez.</li>
-<li><strong>Gizlilik:</strong> Hassas verilerin üçüncü taraf hizmetlere aktarımı ek risk oluşturur.</li>
-<li><strong>Düzenleme:</strong> Piyasa gözetimi ve içeriden öğrenen ticaret kuralları yerel mevzuata tabidir.</li>
-</ul>
-</section>
-<section>
-<h2>BIST 100</h2>
-<p><strong>BIST 100</strong>, Borsa İstanbul’da işlem gören paylardan oluşan endekslerden biridir; bileşen ve ağırlıklar dönemsel güncellenir. Kesin tanımlar için borsanın resmi duyurularına bakın.</p>
-<p class="muted">Aşağıdaki grafik üçüncü taraf bir veri sağlayıcısıdır; fiyatlar gecikmeli veya yaklaşık olabilir. İşlem kararı için tek kaynak kullanmayın.</p>
-<div class="chart-wrap" aria-label="BIST 100 fiyat grafiği">
-<div class="tradingview-widget-container">
-<div class="tradingview-widget-container__widget"></div>
-<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BIST-XU100/" rel="noopener nofollow noreferrer" target="_blank"><span>BIST 100 — TradingView</span></a></div>
-<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-{
-  "autosize": true,
-  "symbol": "BIST:XU100",
-  "interval": "D",
-  "timezone": "Europe/Istanbul",
-  "theme": "dark",
-  "style": "1",
-  "locale": "tr",
-  "enable_publishing": false,
-  "allow_symbol_change": false,
-  "calendar": false,
-  "hide_volume": false,
-  "support_host": "https://www.tradingview.com"
-}
-</script>
-</div>
-</div>
-<p class="muted">Grafik teması koyu renktedir; sistem temanız açık olsa bile okunabilirlik için sabitlenmiştir.</p>
-</section>
-<section>
-<h2>Yapay zeka ve finans</h2>
-<p><strong>Yapay zeka (YZ)</strong> finans dünyasında giderek daha çok; veri hacmi büyüdükçe insanın tek başına süzdüğü sinyallerin yerine <em>özetleme, sınıflandırma, anomali tespiti</em> ve <em>senaryo üretimi</em> gibi yardımcı roller üstleniyor. Aşağıdaki başlıklar bilgilendirme amaçlıdır; ürün veya strateji önerisi içermez.</p>
-<ul>
-<li><strong>Araştırma ve raporlama:</strong> Şirket sunumları, finansal tablolar ve haber akışı gibi metinleri hızlı taramak, tutarlılık kontrolleri ve taslak rapor üretmek için YZ araçları kullanılabilir; nihai metin için uzman gözden geçirmesi gerekir.</li>
-<li><strong>Risk ve uyumluluk (RegTech):</strong> İşlem kalıplarında şüpheli davranışların işaretlenmesi, politika metinlerinin karşılaştırılması ve denetim izi özetleri gibi alanlarda yardımcı olur; karar yine kurallar ve insan süreçlerine bağlıdır.</li>
-<li><strong>Portföy ve fiyatlama modelleri:</strong> Geçmiş getirilere dayalı istatistiksel modeller veya “faktör” yaklaşımları uzun süredir kullanılıyor; derin öğrenme ekleri ise veri ve <strong>model riski</strong> (aşırı uyum, dağılım kayması) yönetimi olmadan anlamlı değildir.</li>
-<li><strong>Alım-satım ve yürütme:</strong> Düşük gecikmeli piyasalarda otomasyon yıllardır var; YZ burada çoğunlukla <em>öngörü</em> yerine <em>veri işleme ve karar desteği</em> katmanında konumlanır. Piyasa mikroyapısı ve düzenleyici kısıtlar dikkate alınmalıdır.</li>
-<li><strong>Etik ve şeffaflık:</strong> Müşteri verisi, açıklanabilirlik (özellikle kurumsal raporlama) ve üçüncü taraf API’lerine güven zinciri kritik konulardır.</li>
-</ul>
-</section>
-<section>
-<h2>Model portföy</h2>
-<p class="muted">Örnek bileşen listesi; <strong>yatırım tavsiyesi değildir</strong>. Payların işlem gördüğü piyasa, kod adları ve şirket unvanları zamanla değişebilir.</p>
-<div class="portfolio" aria-label="Örnek pay kodları">
-<span>BIST:TRGYO</span>
-<span>BIST:RGYAS</span>
-</div>
-<p>İlgili şirket ve enstrüman bilgileri için <a href="https://www.borsaistanbul.com" rel="noopener noreferrer">Borsa İstanbul</a> ve aracı kurum yayımlarına başvurun.</p>
-</section>
-<section>
-<h2>Kaynaklar</h2>
-<ul>
-<li><a href="https://www.borsaistanbul.com/endeksler" rel="noopener noreferrer">Borsa İstanbul — Endeksler</a></li>
-<li><a href="https://www.spk.gov.tr" rel="noopener noreferrer">SPK — Sermaye Piyasası Kurulu</a></li>
-</ul>
-<h3>Akademik: Google Scholar aramaları</h3>
-<p class="muted">Aşağıdaki sorgular <a href="https://scholar.google.com" rel="noopener noreferrer">Google Scholar</a> üzerinde makale ve atıf keşfi için kullanılabilir (içerikler üçüncü taraf yayıncılara aittir).</p>
-<ul>
-<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=machine+learning+empirical+asset+pricing" rel="noopener noreferrer">Scholar — makine öğrenmesi &amp; ampirik varlık fiyatlama</a></li>
-<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=deep+learning+option+pricing+finance" rel="noopener noreferrer">Scholar — derin öğrenme &amp; opsiyon fiyatlama / finans</a></li>
-<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=natural+language+processing+financial+disclosure+sentiment" rel="noopener noreferrer">Scholar — doğal dil işleme &amp; finansal açıklama / duygu analizi</a></li>
-<li><a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=reinforcement+learning+portfolio+optimization" rel="noopener noreferrer">Scholar — pekiştirmeli öğrenme &amp; portföy optimizasyonu</a></li>
-</ul>
-<h3>Akademik: Yazar profilleri (YZ &amp; finans)</h3>
-<p class="muted">Önde gelen araştırmacıların <strong>Google Scholar</strong> profilleri; yayın listeleri ve atıflar için başlangıç noktasıdır.</p>
-<ul>
-<li><a href="https://scholar.google.com/citations?user=0vqdffMAAAAJ&amp;hl=tr" rel="noopener noreferrer">Bryan Kelly — makine öğrenmesi &amp; varlık fiyatlama</a></li>
-<li><a href="https://scholar.google.com/citations?user=TaF4L4EAAAAJ&amp;hl=tr" rel="noopener noreferrer">Jianqing Fan — istatistik, makine öğrenmesi &amp; finans</a></li>
-<li><a href="https://scholar.google.com/citations?user=0-2fCGsAAAAJ&amp;hl=tr" rel="noopener noreferrer">Nick Polson — Bayes / derin öğrenme &amp; finans uygulamaları</a></li>
-<li><a href="https://scholar.google.com/citations?user=mtNQD-8AAAAJ&amp;hl=tr" rel="noopener noreferrer">Stefan Zohren — makine öğrenmesi &amp; zaman serileri (finans)</a></li>
-<li><a href="https://scholar.google.com/citations?user=1QrbVekAAAAJ&amp;hl=tr" rel="noopener noreferrer">Matthew F. Dixon — derin öğrenme &amp; hesaplamalı finans</a></li>
-</ul>
-<p class="muted">Bağlantılar bilgilendirme amaçlıdır; yatırım tavsiyesi değildir.</p>
-</section>
-</main>
-<footer>
-<p>Bilgilendirme amaçlı statik içerik. Kişisel veri toplanmaz.</p>
-</footer>
-</div>
+  <a class="skip" href="#icerik">İçeriğe atla</a>
+
+  <div class="site-top">
+    <div class="site-top__inner">
+      <a class="brand" href="#hero" aria-label="AINVEST ana sayfa">
+        <span class="brand__mark">ainvest.com.tr</span>
+        <span class="brand__name">AINVEST</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="nav-toggle__bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Sayfa bölümleri">
+        <a href="#hero">Ana</a>
+        <a href="#moduller">Odak alanları</a>
+        <a href="#hakkimizda">Hakkında</a>
+        <a href="#kaynaklar">Kaynaklar</a>
+        <a href="#piyasalar">Piyasalar</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero" id="hero">
+    <div class="hero__inner reveal reveal--visible">
+      <p class="hero__badge">Yapay zeka · yatırım · risk çerçevesi</p>
+      <h1>Veriyi disipline eden yatırımcı için AI çağı rehberi</h1>
+      <p class="hero__lede">
+        <strong>AINVEST</strong>, yapay zekanın <em>startup değerlendirme</em>, <em>fon ve endeks seçimi</em> ile
+        <em>araştırma süreçlerinde</em> nasıl kullanılabileceğini; <strong>model riski</strong>, <strong>regülasyon</strong> ve
+        <strong>kaynak doğrulama</strong> ekseninde anlatır. Aşağıdaki tüm içerik <strong>bilgilendirme amaçlıdır</strong>;
+        <strong>yatırım tavsiyesi değildir</strong>.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#moduller">Odak alanlarına git</a>
+        <a
+          class="btn btn--ghost"
+          href="mailto:kemal@ainvest.com.tr?subject=AINVEST%20%C4%B0leti%C5%9Fim&amp;body=Merhaba%2C%0A%0A"
+          >İletişim</a
+        >
+      </div>
+      <p class="warn" role="note">
+        <strong>Uyarı:</strong> Burada pay, fon, tahvil veya herhangi bir enstrüman için alım-satım veya getiri vaadi
+        yoktur. Kararlarınızı kendi riskinizle verin; gerektiğinde lisanslı danışmanlara ve düzenleyici kurumların
+        yayımlarına başvurun.
+      </p>
+    </div>
+  </header>
+
+  <main id="icerik">
+    <section class="trust-strip" id="guven" aria-label="İçerik ilkeleri">
+      <div class="trust-strip__grid reveal">
+        <div class="trust-card">
+          <p class="trust-card__label">Bilgilendirme</p>
+          <p>Metinler ürün tanıtımı veya kişisel getiri hedefi taşımaz; çerçeve ve risk odaklıdır.</p>
+        </div>
+        <div class="trust-card">
+          <p class="trust-card__label">Kaynak doğrulama</p>
+          <p>Resmi düzenleyici ve piyasa kaynaklarına yönlendirme; tek başına AI çıktısına güvenilmez.</p>
+        </div>
+        <div class="trust-card">
+          <p class="trust-card__label">Regülasyon</p>
+          <p>İçeriden öğrenen ticaret, gözetim ve raporlama kuralları yerel mevzuata tabidir.</p>
+        </div>
+        <div class="trust-card">
+          <p class="trust-card__label">Model riski</p>
+          <p>Aşırı uyum, dağılım kayması ve hallüsinasyon; insan denetimi ve veri kalitesi şarttır.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hakkimizda">
+      <div class="wrap reveal">
+        <div class="section__head">
+          <p class="section__eyebrow">Bu kaynak nedir?</p>
+          <h2>AINVEST: AI yatırımları için düşünce disiplini</h2>
+          <p class="section__intro">
+            Amaç; yapay zeka destekli araçların finansal kararlarda nerede güçlü, nerede kırılgan olduğunu net sınırlarla
+            göstermek. Bireysel yatırımcıdan kurumsal araştırma okuyucusuna kadar herkes için ortak dil: <strong>şeffaflık</strong>,
+            <strong>tekrarlanabilirlik</strong> ve <strong>mevzuata saygı</strong>.
+          </p>
+        </div>
+        <div class="metrics" aria-label="İçerik ilkeleri özeti">
+          <div class="metric">
+            <div class="metric__value">Çerçeve</div>
+            <p class="metric__label">Düzenleyici ve piyasa kaynaklarına açık bağlantılar</p>
+          </div>
+          <div class="metric">
+            <div class="metric__value">Kontrollü</div>
+            <p class="metric__label">Model ve veri risklerinin doğrudan tartışılması</p>
+          </div>
+          <div class="metric">
+            <div class="metric__value">Şeffaf</div>
+            <p class="metric__label">Varsayılan olarak yatırım tavsiyesi verilmez</p>
+          </div>
+          <div class="metric">
+            <div class="metric__value">Güncel</div>
+            <p class="metric__label">Akademik arama ve profil bağlantıları ile derinleşme</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="source-band" aria-label="Resmi kaynak bağlantıları">
+      <p class="source-band__label">Doğrulanmış resmi kaynaklar</p>
+      <div class="source-band__links wrap reveal">
+        <a href="https://www.spk.gov.tr" rel="noopener noreferrer">SPK</a>
+        <a href="https://www.borsaistanbul.com" rel="noopener noreferrer">Borsa İstanbul</a>
+        <a href="https://www.borsaistanbul.com/endeksler" rel="noopener noreferrer">BIST endeksleri</a>
+        <a href="https://www.kap.org.tr" rel="noopener noreferrer">KAP</a>
+      </div>
+    </section>
+
+    <section class="quote-block">
+      <div class="quote-block__inner reveal">
+        <blockquote>
+          “Sinyali üretmek kolaydır; asıl mesele, sinyalin hangi varsayımlara dayandığını bilmek ve o varsayımlar kırıldığında
+          ne yapacağını önceden tanımlamaktır.”
+        </blockquote>
+        <cite>AINVEST — özgün çerçeve notu</cite>
+      </div>
+    </section>
+
+    <section class="section" id="perspektifler">
+      <div class="wrap reveal">
+        <div class="section__head">
+          <p class="section__eyebrow">Perspektif</p>
+          <h2>Bireysel ve kurumsal okuyucu için aynı çerçeve</h2>
+          <p class="section__intro">
+            AI yatırımları hem <strong>AI startup’larına</strong> doğrudan sermaye hem de <strong>AI temalı fon ve endeksler</strong>
+            üzerinden dolaylı maruziyet anlamına gelebilir. Aşağıdaki iki sütun aynı risk dilini farklı önceliklerle özetler.
+          </p>
+        </div>
+        <div class="two-col">
+          <article class="panel">
+            <div class="panel__icon" aria-hidden="true">◎</div>
+            <h3>Bireysel yatırımcı perspektifi</h3>
+            <ul>
+              <li><strong>Basitlik tuzağı:</strong> “AI getiri garantisi” iddialarına mesafeli durun.</li>
+              <li><strong>Maliyet ve likidite:</strong> Fon ücretleri, spread ve vergi sonucu belirler.</li>
+              <li><strong>Şeffaflık:</strong> Hangi veri setleri ve hangi model varsayımları kullanılıyor?</li>
+              <li><strong>Dağılım:</strong> Tek hisse veya tek tema ile konsantrasyon riski.</li>
+            </ul>
+            <a class="btn btn--ghost" href="#kaynaklar">Kaynak listesine git</a>
+          </article>
+          <article class="panel">
+            <div class="panel__icon" aria-hidden="true">▣</div>
+            <h3>Kurumsal / fon perspektifi</h3>
+            <ul>
+              <li><strong>Due diligence:</strong> Ürün, veri hattı ve müşteri sözleşmeleri birlikte okunmalı.</li>
+              <li><strong>Model risk yönetimi:</strong> Validasyon, izleme ve geri çekilme (rollback) planı.</li>
+              <li><strong>RegTech:</strong> İşlem izi, içeriden öğrenen ticaret ve KYC/AML süreçleri.</li>
+              <li><strong>Raporlama:</strong> Açıklanabilirlik beklentisi ve denetim dostu dokümantasyon.</li>
+            </ul>
+            <a class="btn btn--ghost" href="#moduller">Modül kartlarını incele</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="moduller">
+      <div class="wrap reveal">
+        <div class="section__head">
+          <p class="section__eyebrow">Odak alanları</p>
+          <h2>AI yatırımı dört pratik başlıkta</h2>
+          <p class="section__intro">
+            Kartlar, karar ağacı değil <strong>okuma haritasıdır</strong>. Her başlıkta önce risk ve sınırlar, sonra tipik
+            kullanım örnekleri yer alır.
+          </p>
+        </div>
+        <div class="module-grid">
+          <article class="module-card">
+            <span class="module-card__tag">Startup</span>
+            <h3>AI startup değerlendirme çerçevesi</h3>
+            <p>
+              Ürün-pazar uyumu, veri avantajı, mühendislik borcu ve düzenleyici maruziyet bir arada değerlendirilir. YZ
+              araçları; sunum, sözleşme ve teknik doküman taramasında <em>hız</em> sağlar; nihai hukuki ve mali karar insan
+              uzmanlığındadır.
+            </p>
+            <div class="module-card__foot">
+              <a href="#kaynaklar">Akademik girişlere git →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <span class="module-card__tag">Fon &amp; endeks</span>
+            <h3>AI fonları ve tematik maruziyet</h3>
+            <p>
+              “AI” etiketi taşıyan fonların içeriği genişleyebilir: yarı iletken tedarik zinciri, bulut altyapısı, yazılım ve
+              hizmetler aynı sepette bulunabilir. İzahname ve dönemsel raporlar, gerçek maruziyeti anlamanın birinci adresidir.
+            </p>
+            <div class="module-card__foot">
+              <a href="#piyasalar">Piyasalar bölümüne git →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <span class="module-card__tag">Strateji</span>
+            <h3>Yatırım stratejisi ve araştırma disiplini</h3>
+            <p>
+              YZ; haber ve finansal tablo özetleri, senaryo üretimi ve tutarlılık kontrollerinde kullanılabilir. Geçmişe aşırı
+              uyum ve önyargı riski nedeniyle <strong>out-of-sample</strong> düşünce ve belirsizlik bandları kritiktir.
+            </p>
+            <div class="module-card__foot">
+              <a href="#kaynaklar">Scholar aramalarına git →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <span class="module-card__tag">Risk</span>
+            <h3>Model, veri ve hallüsinasyon</h3>
+            <p>
+              Dil modelleri yanlış veya eksik bilgi üretebilir; hassas verilerin üçüncü taraf API’lerine aktarımı ek gizlilik
+              riski doğurur. Üretilen metinler <strong>kaynaklarıyla</strong> doğrulanmadan kullanılmamalıdır.
+            </p>
+            <div class="module-card__foot">
+              <a href="#guven">İlke şeridine dön →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <span class="module-card__tag">RegTech</span>
+            <h3>Uyumluluk ve gözetim notları</h3>
+            <p>
+              İşlem kalıplarında şüpheli davranışların işaretlenmesi, politika metinlerinin karşılaştırılması ve denetim izi
+              özetleri gibi alanlarda YZ yardımcı olur; nihai karar kurallar ve insan süreçlerine bağlıdır.
+            </p>
+            <div class="module-card__foot">
+              <a href="https://www.spk.gov.tr" rel="noopener noreferrer">SPK sitesini aç →</a>
+            </div>
+          </article>
+          <article class="module-card">
+            <span class="module-card__tag">Yürütme</span>
+            <h3>Alım-satım ve piyasa mikroyapısı</h3>
+            <p>
+              Düşük gecikmeli piyasalarda otomasyon yıllardır vardır; YZ çoğunlukla <em>öngörü</em> yerine veri işleme ve
+              karar desteğinde konumlanır. Piyasa mikroyapısı ve düzenleyici kısıtlar dikkate alınmalıdır.
+            </p>
+            <div class="module-card__foot">
+              <a href="https://www.borsaistanbul.com" rel="noopener noreferrer">Borsa İstanbul →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__head" style="margin-top: 3rem">
+          <p class="section__eyebrow">Okuma yönleri</p>
+          <h2>Gündemde kalan başlıklar</h2>
+          <p class="section__intro">
+            Tarih vaadi veya “yakında yayında” iddiası yoktur; aşağıdaki konular, AI yatırımlarında sık tekrar eden
+            <strong>okuma eksenleridir</strong>.
+          </p>
+        </div>
+        <div class="topics-row">
+          <article class="topic-card">
+            <h3>Açıklanabilirlik</h3>
+            <p>Kurumsal raporlama ve model kartları: hangi girdi, hangi çıktı, hangi güven aralığı?</p>
+          </article>
+          <article class="topic-card">
+            <h3>Veri kalitesi ve çizgi ötesi</h3>
+            <p>Eğitim verisi ile canlı piyasa dağılımı farklılaştığında model performansı hızla bozulabilir.</p>
+          </article>
+          <article class="topic-card">
+            <h3>Etik ve müşteri verisi</h3>
+            <p>Üçüncü taraf API zinciri ve veri saklama politikaları güven ve itibar riskini doğrudan etkiler.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chart-section" id="piyasalar">
+      <div class="wrap reveal">
+        <div class="section__head">
+          <p class="section__eyebrow">Piyasalar</p>
+          <h2><abbr title="Borsa İstanbul">BIST</abbr> 100 — bağlam ve grafik</h2>
+          <p class="section__intro">
+            <strong>BIST 100</strong>, Borsa İstanbul’da işlem gören paylardan oluşan endekslerden biridir; bileşen ve ağırlıklar
+            dönemsel güncellenir. Kesin tanımlar için borsanın resmi duyurularına bakın. Grafik üçüncü taraf
+            <strong>TradingView</strong> embed’idir; yalnızca “Grafiği yükle” ile indirilir (performans için).
+          </p>
+          <p class="muted">
+            Fiyatlar gecikmeli veya yaklaşık olabilir. İşlem kararı için tek kaynak kullanmayın. Grafik teması okunabilirlik için
+            koyu renktedir.
+          </p>
+        </div>
+        <div class="chart-wrap" aria-label="BIST 100 grafiği alanı">
+          <div id="chart-placeholder" class="chart-placeholder">
+            <p>
+              Grafik yüklenene kadar harici bir script indirilmez. İsterseniz aşağıdaki düğmeyle grafiği yükleyin.
+            </p>
+            <button type="button" class="btn btn--primary" id="load-chart-btn">Grafiği yükle</button>
+          </div>
+          <div id="tv-mount" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ornek-portfoy">
+      <div class="wrap reveal">
+        <h2>Örnek pay kodları</h2>
+        <p class="muted">
+          Aşağıdaki kodlar yalnızca <strong>örnek</strong> gösterimdir; <strong>yatırım tavsiyesi değildir</strong>. Payların işlem
+          gördüğü piyasa, kod adları ve şirket unvanları zamanla değişebilir.
+        </p>
+        <div class="portfolio" aria-label="Örnek pay kodları">
+          <span>BIST:TRGYO</span>
+          <span>BIST:RGYAS</span>
+        </div>
+        <p>
+          İlgili şirket ve enstrüman bilgileri için
+          <a href="https://www.borsaistanbul.com" rel="noopener noreferrer">Borsa İstanbul</a> ve aracı kurum yayımlarına
+          başvurun.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="kaynaklar">
+      <div class="wrap reveal resource-lists">
+        <div class="section__head">
+          <p class="section__eyebrow">Derinleşme</p>
+          <h2>Kaynaklar ve akademik girişler</h2>
+          <p class="section__intro">
+            Bağlantılar bilgilendirme amaçlıdır; içeriklerin doğruluğu ilgili kurum ve yayıncılara aittir.
+            <strong>Yatırım tavsiyesi değildir.</strong>
+          </p>
+        </div>
+        <h3>Resmi kurumlar</h3>
+        <ul>
+          <li><a href="https://www.borsaistanbul.com/endeksler" rel="noopener noreferrer">Borsa İstanbul — Endeksler</a></li>
+          <li><a href="https://www.spk.gov.tr" rel="noopener noreferrer">SPK — Sermaye Piyasası Kurulu</a></li>
+          <li><a href="https://www.kap.org.tr" rel="noopener noreferrer">KAP — Kamuyu Aydınlatma Platformu</a></li>
+        </ul>
+        <h3>Google Scholar aramaları</h3>
+        <p class="muted">
+          Aşağıdaki sorgular <a href="https://scholar.google.com" rel="noopener noreferrer">Google Scholar</a> üzerinde makale ve
+          atıf keşfi için kullanılabilir (içerikler üçüncü taraf yayıncılara aittir).
+        </p>
+        <ul>
+          <li>
+            <a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=machine+learning+empirical+asset+pricing" rel="noopener noreferrer"
+              >Scholar — makine öğrenmesi &amp; ampirik varlık fiyatlama</a
+            >
+          </li>
+          <li>
+            <a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=deep+learning+option+pricing+finance" rel="noopener noreferrer"
+              >Scholar — derin öğrenme &amp; opsiyon fiyatlama / finans</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=natural+language+processing+financial+disclosure+sentiment"
+              rel="noopener noreferrer"
+              >Scholar — doğal dil işleme &amp; finansal açıklama / duygu analizi</a
+            >
+          </li>
+          <li>
+            <a href="https://scholar.google.com/scholar?hl=tr&amp;as_sdt=0%2C5&amp;q=reinforcement+learning+portfolio+optimization" rel="noopener noreferrer"
+              >Scholar — pekiştirmeli öğrenme &amp; portföy optimizasyonu</a
+            >
+          </li>
+        </ul>
+        <h3>Yazar profilleri (YZ &amp; finans)</h3>
+        <p class="muted">
+          Önde gelen araştırmacıların <strong>Google Scholar</strong> profilleri; yayın listeleri ve atıflar için başlangıç
+          noktasıdır.
+        </p>
+        <ul>
+          <li>
+            <a href="https://scholar.google.com/citations?user=0vqdffMAAAAJ&amp;hl=tr" rel="noopener noreferrer"
+              >Bryan Kelly — makine öğrenmesi &amp; varlık fiyatlama</a
+            >
+          </li>
+          <li>
+            <a href="https://scholar.google.com/citations?user=TaF4L4EAAAAJ&amp;hl=tr" rel="noopener noreferrer"
+              >Jianqing Fan — istatistik, makine öğrenmesi &amp; finans</a
+            >
+          </li>
+          <li>
+            <a href="https://scholar.google.com/citations?user=0-2fCGsAAAAJ&amp;hl=tr" rel="noopener noreferrer"
+              >Nick Polson — Bayes / derin öğrenme &amp; finans uygulamaları</a
+            >
+          </li>
+          <li>
+            <a href="https://scholar.google.com/citations?user=mtNQD-8AAAAJ&amp;hl=tr" rel="noopener noreferrer"
+              >Stefan Zohren — makine öğrenmesi &amp; zaman serileri (finans)</a
+            >
+          </li>
+          <li>
+            <a href="https://scholar.google.com/citations?user=1QrbVekAAAAJ&amp;hl=tr" rel="noopener noreferrer"
+              >Matthew F. Dixon — derin öğrenme &amp; hesaplamalı finans</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="iletisim">
+      <div class="wrap reveal">
+        <div class="section__head">
+          <p class="section__eyebrow">İletişim</p>
+          <h2>Geri bildirim ve iş birliği talepleri</h2>
+          <p class="section__intro">
+            Statik bir GitHub Pages sitesi olduğu için form toplama yoktur. Kısa talepleriniz için e-posta tercih edilir;
+            yanıt süresi garanti edilmez.
+          </p>
+        </div>
+        <div class="contact-panel">
+          <div class="steps" aria-label="İletişim adımları">
+            <div class="step">
+              <h3>İletişim</h3>
+              <p>Konu başlığıyla birlikte kısa bir e-posta gönderin.</p>
+            </div>
+            <div class="step">
+              <h3>Ön bilgi</h3>
+              <p>Talep türünü (geri bildirim, kaynak önerisi vb.) net yazın.</p>
+            </div>
+            <div class="step">
+              <h3>Geri dönüş</h3>
+              <p>Uygun görüldüğünde yanıt verilir; hukuki veya yatırım danışmanlığı sunulmaz.</p>
+            </div>
+          </div>
+          <div class="contact-actions">
+            <a
+              class="btn btn--primary"
+              href="mailto:kemal@ainvest.com.tr?subject=AINVEST%20%C4%B0leti%C5%9Fim&amp;body=Merhaba%2C%0A%0A"
+              >E-posta gönder</a
+            >
+            <a
+              class="btn btn--ghost"
+              href="mailto:kemal@ainvest.com.tr?subject=AINVEST%20g%C3%BCncelleme%20talebi&amp;body=Merhaba%2C%0A%0AG%C3%BCncelleme%20%2F%20i%C3%A7erik%20%C3%B6nerisi%3A%0A%0A"
+              >Güncelleme / içerik önerisi yaz</a
+            >
+          </div>
+          <p class="muted" style="margin-top: 1.25rem">
+            Bu site kişisel veri toplamaz. E-posta gönderimi cihazınızdaki istemci uygulaması üzerinden yapılır.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>Bilgilendirme amaçlı statik içerik. Kişisel veri toplanmaz.</p>
+      <p>
+        <a href="https://www.spk.gov.tr" rel="noopener noreferrer">SPK</a> ·
+        <a href="https://www.borsaistanbul.com" rel="noopener noreferrer">Borsa İstanbul</a> ·
+        <a href="https://www.kap.org.tr" rel="noopener noreferrer">KAP</a>
+      </p>
+      <p class="site-footer__ai">Bu web sitesi AI desteği ile oluşturulmuştur.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
